@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Korean Voice Memo
 
-## Getting Started
+Bilingual Korean+English AI voice memo assistant. Record a memo in Korean, English, or both — get a transcript with per-segment language tags, an LLM summary, extracted action items you can add to Google Calendar, and a semantic search bar to ask questions across all your past memos.
 
-First, run the development server:
+**Live demo:** (coming soon — deploy to Vercel)
+
+## Features
+
+- **Bilingual STT** — OpenAI Whisper handles Korean, English, and code-switched audio natively
+- **Per-segment language tagging** — each transcript segment is tagged `[KO]` or `[EN]` with one-tap translation
+- **AI summary + action items** — Claude Sonnet extracts a summary and concrete TODOs via structured tool use
+- **Google Calendar integration** — one-click to add any action item as a calendar event
+- **Semantic search** — ask questions across all your memos; answers are grounded in retrieved excerpts with citations (RAG)
+- **Eval harness** — WER, LLM-as-judge, action item precision/recall, retrieval P@3/MRR — CI blocks regressions
+
+## Stack
+
+| Layer | Choice |
+|-------|--------|
+| Frontend | Next.js 15 (App Router) + TypeScript + Tailwind + shadcn/ui |
+| STT | OpenAI Whisper API |
+| LLM | Claude Sonnet 4.6 (Anthropic SDK, prompt caching) |
+| Embeddings | OpenAI text-embedding-3-small |
+| Vector store | Upstash Vector |
+| Database | Supabase Postgres |
+| Audio storage | Vercel Blob |
+| Auth | Clerk |
+| Calendar | Google Calendar API v3 |
+| Deploy | Vercel |
+
+## Setup
+
+### 1. Clone and install
+
+```bash
+git clone https://github.com/thecyprince/korean-voice-memo
+cd korean-voice-memo
+npm install
+```
+
+### 2. Set environment variables
+
+```bash
+cp .env.example .env.local
+# Fill in all values — see .env.example for instructions
+```
+
+You'll need accounts for: OpenAI, Anthropic, Upstash, Supabase, Vercel, Clerk, and Google Cloud (Calendar API).
+
+### 3. Create the Supabase table
+
+Run `supabase/schema.sql` in the Supabase SQL editor.
+
+### 4. Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Evals
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Populate evals/data/ with audio files + ground truth first (see evals/*.ts for format)
+npm run evals
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Eval | Target |
+|------|--------|
+| STT WER (English) | < 10% |
+| STT WER (Korean) | < 15% |
+| STT WER (code-switched) | < 20% |
+| Summary faithfulness | ≥ 4.5/5 |
+| Summary relevance | ≥ 4.0/5 |
+| Action item precision | ≥ 0.90 |
+| Action item recall | ≥ 0.70 |
+| Retrieval P@3 | ≥ 0.70 |
+| Retrieval MRR | ≥ 0.60 |
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel --prod
+# Set all env vars in the Vercel dashboard
+```
