@@ -1,4 +1,4 @@
-# Handoff: Korean Voice Memo — Initial Scaffold — 2026-05-21
+# Handoff: Korean Voice Memo — Initial Scaffold — 2026-05-21 (`2eb81a5`)
 
 ## Goal
 

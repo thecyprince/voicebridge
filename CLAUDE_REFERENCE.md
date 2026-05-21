@@ -226,6 +226,6 @@ vercel --prod
 
 | Date | Summary |
 |------|---------|
-| 2026-05-21 | Initial scaffold — Next.js 15, all lib/API/component/eval files written. TypeScript clean. No services connected yet. |
+| 2026-05-21 | Initial scaffold — Next.js 15, all lib/API/component/eval files written. TypeScript clean. No services connected yet. Commit: `2eb81a5` |
 
 *(Append a row at the end of each work session.)*
