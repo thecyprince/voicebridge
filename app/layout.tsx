@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Korean Voice Memo",
+  title: "VoiceBridge",
   description: "Bilingual Korean+English AI voice memo assistant with semantic search",
 };
 

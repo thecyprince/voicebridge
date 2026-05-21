@@ -1,4 +1,4 @@
-# Korean Voice Memo
+# VoiceBridge
 
 Bilingual Korean+English AI voice memo assistant. Record a memo in Korean, English, or both — get a transcript with per-segment language tags, an LLM summary, extracted action items you can add to Google Calendar, and a semantic search bar to ask questions across all your past memos.
 
@@ -33,8 +33,8 @@ Bilingual Korean+English AI voice memo assistant. Record a memo in Korean, Engli
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/thecyprince/korean-voice-memo
-cd korean-voice-memo
+git clone https://github.com/thecyprince/voicebridge
+cd voicebridge
 npm install
 ```
 

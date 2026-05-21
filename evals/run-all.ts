@@ -13,7 +13,7 @@ import { runActionItemEval } from "./action-item-eval";
 import { runRetrievalEval } from "./retrieval-eval";
 
 async function main() {
-  console.log("=== Korean Voice Memo — Eval Suite ===\n");
+  console.log("=== VoiceBridge — Eval Suite ===\n");
 
   const results: Array<{ name: string; pass: boolean; details: string }> = [];
 

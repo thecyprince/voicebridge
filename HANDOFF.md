@@ -1,4 +1,4 @@
-# Handoff: Korean Voice Memo — Initial Scaffold — 2026-05-21 (`2eb81a5`)
+# Handoff: VoiceBridge — Initial Scaffold — 2026-05-21 (`2eb81a5`)
 
 ## Goal
 
@@ -6,7 +6,7 @@ Build a bilingual Korean+English AI voice memo assistant as a personal portfolio
 
 ## Accomplished
 
-- Scaffolded a Next.js 15 (App Router) + TypeScript + Tailwind + shadcn/ui project at `~/Projects/korean-voice-memo`
+- Scaffolded a Next.js 15 (App Router) + TypeScript + Tailwind + shadcn/ui project at `~/Projects/voicebridge`
 - Installed all dependencies (OpenAI, Anthropic SDK, Upstash Vector, Supabase, Vercel Blob, Clerk, googleapis)
 - Wrote the complete AI pipeline: Whisper STT → Claude summary/action items (via tool use) → embeddings → Upstash Vector upsert
 - Wrote all 5 API routes: POST/GET `/api/memos`, GET/DELETE `/api/memos/[id]`, GET `/api/search`, POST `/api/translate`, POST `/api/calendar`
@@ -78,17 +78,17 @@ None. The scaffold went cleanly.
 
 7. **Deploy to Vercel** (`vercel --prod`), set all env vars in dashboard
 
-8. **Add to CV**: once deployed, add "Korean Voice Memo" as the third project entry in `cv.md` with the Vercel URL
+8. **Add to CV**: once deployed, add "VoiceBridge" as the third project entry in `cv.md` with the Vercel URL
 
 ## How the Project Was Created
 
 ```bash
 # Scaffold
 cd ~/Projects
-npx create-next-app@latest korean-voice-memo --typescript --tailwind --eslint --app --src-dir=false --import-alias="@/*" --no-turbopack --yes
+npx create-next-app@latest voicebridge --typescript --tailwind --eslint --app --src-dir=false --import-alias="@/*" --no-turbopack --yes
 
 # Dependencies
-cd korean-voice-memo
+cd voicebridge
 npm install @anthropic-ai/sdk openai @upstash/vector @supabase/supabase-js @vercel/blob googleapis
 npm install @clerk/nextjs word-error-rate
 npm install -D tsx

@@ -1,4 +1,4 @@
-# Korean Voice Memo — Claude Instructions
+# VoiceBridge — Claude Instructions
 
 Bilingual Korean+English AI voice memo app. Eric's portfolio project — demonstrates STT, RAG, LLM tool use, evals. Full details in `CLAUDE_REFERENCE.md`.
 

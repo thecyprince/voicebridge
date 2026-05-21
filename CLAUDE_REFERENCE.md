@@ -1,4 +1,4 @@
-# Korean Voice Memo — Full Reference
+# VoiceBridge — Full Reference
 
 > Detailed reference for Eric and Claude. Read on demand — not loaded every session.
 > Update this file when architecture, files, or setup steps change.
@@ -33,7 +33,7 @@ Record a voice memo (Korean, English, or mixed) → get a transcript with per-se
 ## Project Structure
 
 ```
-korean-voice-memo/
+voicebridge/
 ├── app/
 │   ├── api/
 │   │   ├── memos/route.ts          # POST (full pipeline) + GET (list)
@@ -184,7 +184,7 @@ Calendar
 
 1. **Install**
    ```bash
-   cd ~/Projects/korean-voice-memo && npm install
+   cd ~/Projects/voicebridge && npm install
    ```
 
 2. **Create external services** (~1 hour):
