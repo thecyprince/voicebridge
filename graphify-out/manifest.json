@@ -1,0 +1,262 @@
+{
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components.json": {
+    "mtime": 1779358774.7094538,
+    "ast_hash": "02016e740b7b0e6a3b00a3441ac0bda7",
+    "semantic_hash": "02016e740b7b0e6a3b00a3441ac0bda7"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\eslint.config.mjs": {
+    "mtime": 1779358774.7138865,
+    "ast_hash": "6c4307ffa009658f5c97f5629094c0c2",
+    "semantic_hash": "6c4307ffa009658f5c97f5629094c0c2"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\next.config.ts": {
+    "mtime": 1779358774.7197542,
+    "ast_hash": "025f4fcb6024b3524d19492cf7ce54a2",
+    "semantic_hash": "025f4fcb6024b3524d19492cf7ce54a2"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\package.json": {
+    "mtime": 1779375951.89969,
+    "ast_hash": "f231bf821dbcf37c9fc7f3f6d90fb082",
+    "semantic_hash": "f231bf821dbcf37c9fc7f3f6d90fb082"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\postcss.config.mjs": {
+    "mtime": 1779358774.721706,
+    "ast_hash": "481fac0fdecd70e1821cc30b86030c1a",
+    "semantic_hash": "481fac0fdecd70e1821cc30b86030c1a"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\tsconfig.json": {
+    "mtime": 1779358774.7242012,
+    "ast_hash": "ab575e944f15d39a5486cf9fca385c5e",
+    "semantic_hash": "ab575e944f15d39a5486cf9fca385c5e"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\layout.tsx": {
+    "mtime": 1779375217.22869,
+    "ast_hash": "fcb972889bd16f93689b64b3c54cfb19",
+    "semantic_hash": "fcb972889bd16f93689b64b3c54cfb19"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\page.tsx": {
+    "mtime": 1779358774.7094538,
+    "ast_hash": "7407fdbb6e288a4a09d743c6060dfa59",
+    "semantic_hash": "7407fdbb6e288a4a09d743c6060dfa59"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\api\\calendar\\route.ts": {
+    "mtime": 1779358774.705994,
+    "ast_hash": "889b5810f0fc14c50c933a7b80b5b786",
+    "semantic_hash": "889b5810f0fc14c50c933a7b80b5b786"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\api\\memos\\route.ts": {
+    "mtime": 1779358774.705994,
+    "ast_hash": "c6c2bb5b782d31c9883cf92dfc050267",
+    "semantic_hash": "c6c2bb5b782d31c9883cf92dfc050267"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\api\\memos\\[id]\\route.ts": {
+    "mtime": 1779358774.705994,
+    "ast_hash": "c1dc27326acf40508d61eae76f262d85",
+    "semantic_hash": "c1dc27326acf40508d61eae76f262d85"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\api\\search\\route.ts": {
+    "mtime": 1779358774.7074966,
+    "ast_hash": "2a2876382e3ccaef9537c6b5df68b8a5",
+    "semantic_hash": "2a2876382e3ccaef9537c6b5df68b8a5"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\app\\api\\translate\\route.ts": {
+    "mtime": 1779358774.7074966,
+    "ast_hash": "4283e1619d124861925f363fca4d4cb2",
+    "semantic_hash": "4283e1619d124861925f363fca4d4cb2"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\MemoSidebar.tsx": {
+    "mtime": 1779358774.7104306,
+    "ast_hash": "7e34c91a05bdcd2781ec28c31c9d69b2",
+    "semantic_hash": "7e34c91a05bdcd2781ec28c31c9d69b2"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\Recorder.tsx": {
+    "mtime": 1779358774.7104306,
+    "ast_hash": "c6d06bdcc473f15523883ef8e6c448fb",
+    "semantic_hash": "c6d06bdcc473f15523883ef8e6c448fb"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\SearchBar.tsx": {
+    "mtime": 1779358774.7104306,
+    "ast_hash": "dfe37e7c6a818b50e990a45412f8b1d8",
+    "semantic_hash": "dfe37e7c6a818b50e990a45412f8b1d8"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\SummaryPanel.tsx": {
+    "mtime": 1779358774.7114067,
+    "ast_hash": "24c7f9ed2a6da2772c980dd04d3399e9",
+    "semantic_hash": "24c7f9ed2a6da2772c980dd04d3399e9"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\TranscriptView.tsx": {
+    "mtime": 1779358774.7114067,
+    "ast_hash": "eecb9333c4287fa9997e08c7639477a6",
+    "semantic_hash": "eecb9333c4287fa9997e08c7639477a6"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\badge.tsx": {
+    "mtime": 1779358774.7123828,
+    "ast_hash": "1ff3e04a7fd408f9bd7520187dce5d19",
+    "semantic_hash": "1ff3e04a7fd408f9bd7520187dce5d19"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\button.tsx": {
+    "mtime": 1779358774.7123828,
+    "ast_hash": "fa7dc9bec92a2ea0344e2a5c4738514f",
+    "semantic_hash": "fa7dc9bec92a2ea0344e2a5c4738514f"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\card.tsx": {
+    "mtime": 1779358774.7123828,
+    "ast_hash": "ee74a83be6bb8fc3473cb6cceffe8813",
+    "semantic_hash": "ee74a83be6bb8fc3473cb6cceffe8813"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\scroll-area.tsx": {
+    "mtime": 1779358774.7123828,
+    "ast_hash": "7e213fb00f86a1b00b2df7cfab32525d",
+    "semantic_hash": "7e213fb00f86a1b00b2df7cfab32525d"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\separator.tsx": {
+    "mtime": 1779358774.7123828,
+    "ast_hash": "bb51ace4279e49d0a4628fafa6ea10b9",
+    "semantic_hash": "bb51ace4279e49d0a4628fafa6ea10b9"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\sonner.tsx": {
+    "mtime": 1779358774.7138865,
+    "ast_hash": "7005ed2984ab498ef51f3ed910e1abf2",
+    "semantic_hash": "7005ed2984ab498ef51f3ed910e1abf2"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\components\\ui\\textarea.tsx": {
+    "mtime": 1779358774.7138865,
+    "ast_hash": "378ccca2b6eee051a23c1e6d7bc80952",
+    "semantic_hash": "378ccca2b6eee051a23c1e6d7bc80952"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\evals\\action-item-eval.ts": {
+    "mtime": 1779358774.714867,
+    "ast_hash": "73aadf7609e5a68eed74aa761dbf4593",
+    "semantic_hash": "73aadf7609e5a68eed74aa761dbf4593"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\evals\\retrieval-eval.ts": {
+    "mtime": 1779358774.714867,
+    "ast_hash": "314cc4587f59cc2f3c747bd6b734d852",
+    "semantic_hash": "314cc4587f59cc2f3c747bd6b734d852"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\evals\\run-all.ts": {
+    "mtime": 1779373087.7643752,
+    "ast_hash": "97fd004a2be4c3462494b9b5e204cc16",
+    "semantic_hash": "97fd004a2be4c3462494b9b5e204cc16"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\evals\\summary-judge.ts": {
+    "mtime": 1779358774.7158473,
+    "ast_hash": "f9ee0a8c0907b8bd88021ce1ce2d9afb",
+    "semantic_hash": "f9ee0a8c0907b8bd88021ce1ce2d9afb"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\evals\\wer.ts": {
+    "mtime": 1779358774.7158473,
+    "ast_hash": "95f8436d317be991d65b534bf3caaaed",
+    "semantic_hash": "95f8436d317be991d65b534bf3caaaed"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\chunker.ts": {
+    "mtime": 1779358774.7168238,
+    "ast_hash": "ed388a52d4db39a9ea4c0b5238e98e9a",
+    "semantic_hash": "ed388a52d4db39a9ea4c0b5238e98e9a"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\claude.ts": {
+    "mtime": 1779358774.7168238,
+    "ast_hash": "1882cc728bfeaac6735cd3b8d5514462",
+    "semantic_hash": "1882cc728bfeaac6735cd3b8d5514462"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\embeddings.ts": {
+    "mtime": 1779358774.7168238,
+    "ast_hash": "eba19544cf3603914f9e51e61717a7f7",
+    "semantic_hash": "eba19544cf3603914f9e51e61717a7f7"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\supabase.ts": {
+    "mtime": 1779358774.7178004,
+    "ast_hash": "9fbb4b19b1881ce6adaf28ef47b57e01",
+    "semantic_hash": "9fbb4b19b1881ce6adaf28ef47b57e01"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\utils.ts": {
+    "mtime": 1779358774.718777,
+    "ast_hash": "1d8011eb18769078bf77502b220daa5e",
+    "semantic_hash": "1d8011eb18769078bf77502b220daa5e"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\vector.ts": {
+    "mtime": 1779358774.718777,
+    "ast_hash": "d9bf2719828ea3b0e274fa1cc9a2e37c",
+    "semantic_hash": "d9bf2719828ea3b0e274fa1cc9a2e37c"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\whisper.ts": {
+    "mtime": 1779358774.718777,
+    "ast_hash": "3d49129872e6430f1f74173a7a73111c",
+    "semantic_hash": "3d49129872e6430f1f74173a7a73111c"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\prompts\\grounded-answer.ts": {
+    "mtime": 1779358774.7178004,
+    "ast_hash": "2e1637fd730f9a2ca98e8712a56a0815",
+    "semantic_hash": "2e1637fd730f9a2ca98e8712a56a0815"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\prompts\\summarize.ts": {
+    "mtime": 1779358774.7178004,
+    "ast_hash": "4bff56e1e0dcff0987372cfd23f510d0",
+    "semantic_hash": "4bff56e1e0dcff0987372cfd23f510d0"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\lib\\prompts\\translate.ts": {
+    "mtime": 1779358774.7178004,
+    "ast_hash": "d9621f4e1a4bc8fe6dfa8d2aa5f92af0",
+    "semantic_hash": "d9621f4e1a4bc8fe6dfa8d2aa5f92af0"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\supabase\\schema.sql": {
+    "mtime": 1779358774.7242012,
+    "ast_hash": "aad02b217f067f7633d4d70ae97abcde",
+    "semantic_hash": "aad02b217f067f7633d4d70ae97abcde"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\types\\index.ts": {
+    "mtime": 1779358774.7242012,
+    "ast_hash": "5e688bb3c9d8a9aaaf9812acf13b6e66",
+    "semantic_hash": "5e688bb3c9d8a9aaaf9812acf13b6e66"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\AGENTS.md": {
+    "mtime": 1779358774.7030332,
+    "ast_hash": "9346a4897ff955555ddedb7bebf77adb",
+    "semantic_hash": "9346a4897ff955555ddedb7bebf77adb"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\CLAUDE.md": {
+    "mtime": 1779373089.3436801,
+    "ast_hash": "36a700f9504b6d7c0c75924d216d2723",
+    "semantic_hash": "36a700f9504b6d7c0c75924d216d2723"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\CLAUDE_REFERENCE.md": {
+    "mtime": 1779373097.2226453,
+    "ast_hash": "4f25ae6b2e2da0f6f545e55de4863de4",
+    "semantic_hash": "4f25ae6b2e2da0f6f545e55de4863de4"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\HANDOFF.md": {
+    "mtime": 1779373146.6906967,
+    "ast_hash": "a7979c2c092efe90d61deabc2d736dc2",
+    "semantic_hash": "a7979c2c092efe90d61deabc2d736dc2"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\README.md": {
+    "mtime": 1779373091.2005322,
+    "ast_hash": "e63f59013a80d0a87e71812d95bc4743",
+    "semantic_hash": "e63f59013a80d0a87e71812d95bc4743"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\public\\file.svg": {
+    "mtime": 1779358774.7226827,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\public\\globe.svg": {
+    "mtime": 1779358774.7226827,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\public\\next.svg": {
+    "mtime": 1779358774.7226827,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\public\\vercel.svg": {
+    "mtime": 1779358774.7226827,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "C:\\Users\\thecy\\Projects\\voicebridge\\public\\window.svg": {
+    "mtime": 1779358774.7236857,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

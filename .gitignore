@@ -43,3 +43,12 @@ next-env.d.ts
 
 # eval audio data (too large for git; add your own)
 evals/data/audio/
+
+# Google OAuth client secret (contains credentials)
+client_secret_*.json
+
+# Graphify machine-specific files
+graphify-out/.graphify_python
+graphify-out/.graphify_root
+graphify-out/cache/
+graphify-out/graph.html
