@@ -19,3 +19,14 @@ alter table memos enable row level security;
 -- For single-user / service-role access only, no RLS policy needed.
 -- If you add Clerk + Supabase auth later, add:
 -- create policy "owner" on memos using (auth.uid()::text = user_id);
+
+-- Google Calendar OAuth tokens (one row: id = 'default')
+create table if not exists google_tokens (
+  id             text primary key,
+  refresh_token  text,
+  access_token   text,
+  expiry_date    bigint,
+  updated_at     timestamptz not null default now()
+);
+
+-- Service-role access only — no RLS needed for this table.

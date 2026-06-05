@@ -11,12 +11,20 @@ function detectLanguage(langCode: string | null | undefined): Language {
   return "unknown";
 }
 
+function mimeToExt(mimeType: string): string {
+  if (mimeType.includes("mp4")) return "mp4";
+  if (mimeType.includes("ogg")) return "ogg";
+  if (mimeType.includes("mpeg")) return "mp3";
+  return "webm";
+}
+
 export async function transcribeAudio(audioBlob: Blob): Promise<{
   segments: TranscriptSegment[];
   detectedLanguages: Language[];
   durationSeconds: number;
 }> {
-  const file = new File([audioBlob], "audio.webm", { type: audioBlob.type });
+  const ext = mimeToExt(audioBlob.type);
+  const file = new File([audioBlob], `audio.${ext}`, { type: audioBlob.type });
 
   const response = await client.audio.transcriptions.create({
     file,

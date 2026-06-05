@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { Memo } from "@/types";
+import { Memo, TranscriptSegment } from "@/types";
 
 // Server-side only (service role). Never import on the client.
 export const supabase = createClient(
@@ -50,6 +50,17 @@ export async function getMemosByIds(ids: string[]): Promise<Memo[]> {
     .in("id", ids);
   if (error) throw new Error(`Supabase query failed: ${error.message}`);
   return (data ?? []).map(rowToMemo);
+}
+
+export async function updateMemoSegments(
+  memoId: string,
+  segments: TranscriptSegment[],
+): Promise<void> {
+  const { error } = await supabase
+    .from("memos")
+    .update({ segments })
+    .eq("id", memoId);
+  if (error) throw new Error(`Supabase update failed: ${error.message}`);
 }
 
 export async function deleteMemo(id: string): Promise<void> {

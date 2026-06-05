@@ -7,6 +7,8 @@ export interface TranscriptSegment {
   text: string;
   language: Language;
   translation?: string; // populated on demand
+  speaker?: number;     // 0-based diarization index (Gladia)
+  speakerName?: string; // user-assigned display name
 }
 
 export interface ActionItem {

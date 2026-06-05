@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ActionItem, Memo } from "@/types";
 import { Badge } from "@/components/ui/badge";
+import { toast } from "sonner";
 
 interface SummaryPanelProps {
   memo: Memo;
@@ -23,6 +24,7 @@ function ActionItemRow({
 
   const addToCalendar = async () => {
     setAdding(true);
+    const tid = toast.loading("Adding to Google Calendar…");
     try {
       const res = await fetch("/api/calendar", {
         method: "POST",
@@ -38,8 +40,10 @@ function ActionItemRow({
       if (error) throw new Error(error);
       setEventUrl(url);
       onUpdated?.({ ...item, calendarEventId: url });
+      toast.success("Added to Google Calendar!", { id: tid });
     } catch (err: any) {
-      alert(`Calendar error: ${err.message}`);
+      const msg = err.message ?? "Calendar error";
+      toast.error(msg, { id: tid });
     } finally {
       setAdding(false);
     }
@@ -47,11 +51,11 @@ function ActionItemRow({
 
   return (
     <li className="flex items-start gap-2 py-1.5">
-      <span className="text-gray-400 mt-0.5">☐</span>
+      <span className="text-gray-400 dark:text-gray-500 mt-0.5">☐</span>
       <div className="flex-1 min-w-0">
-        <p className="text-sm text-gray-800">{item.text}</p>
+        <p className="text-sm text-gray-800 dark:text-gray-200">{item.text}</p>
         {item.dueDate && (
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-400 dark:text-gray-500">
             Due: {new Date(item.dueDate).toLocaleDateString()}
           </p>
         )}
@@ -60,17 +64,17 @@ function ActionItemRow({
             href={eventUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-green-600 hover:underline"
+            className="text-xs text-green-600 dark:text-green-400 hover:underline"
           >
             ✓ Added to Calendar
           </a>
         ) : item.calendarEventId ? (
-          <span className="text-xs text-green-600">✓ In Calendar</span>
+          <span className="text-xs text-green-600 dark:text-green-400">✓ In Calendar</span>
         ) : (
           <button
             onClick={addToCalendar}
             disabled={adding}
-            className="text-xs text-blue-500 hover:underline"
+            className="text-xs text-blue-500 hover:underline disabled:opacity-50"
           >
             {adding ? "Adding…" : "+ Calendar"}
           </button>
@@ -82,11 +86,15 @@ function ActionItemRow({
 
 export function SummaryPanel({ memo, onActionItemUpdated }: SummaryPanelProps) {
   return (
-    <div className="p-4 space-y-4 overflow-y-auto h-full">
+    <div className="p-4 space-y-4 overflow-y-auto h-full dark:bg-gray-900">
       {/* Topics */}
       <div className="flex flex-wrap gap-1">
         {memo.topics.map((t) => (
-          <Badge key={t} variant="secondary" className="text-xs">
+          <Badge
+            key={t}
+            variant="secondary"
+            className="text-xs dark:bg-gray-700 dark:text-gray-200"
+          >
             {t}
           </Badge>
         ))}
@@ -94,16 +102,18 @@ export function SummaryPanel({ memo, onActionItemUpdated }: SummaryPanelProps) {
 
       {/* Summary */}
       <div>
-        <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+        <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
           Summary
         </h4>
-        <p className="text-sm text-gray-800 leading-relaxed">{memo.summary}</p>
+        <p className="text-sm text-gray-800 dark:text-gray-200 leading-relaxed">
+          {memo.summary}
+        </p>
       </div>
 
       {/* Action items */}
       {memo.actionItems.length > 0 && (
         <div>
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+          <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
             Action Items
           </h4>
           <ul className="space-y-1">
@@ -118,6 +128,17 @@ export function SummaryPanel({ memo, onActionItemUpdated }: SummaryPanelProps) {
           </ul>
         </div>
       )}
+
+      {/* Calendar connect hint */}
+      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+        <a
+          href="/api/calendar/connect"
+          className="text-xs text-blue-400 hover:underline"
+          title="Connect Google Calendar to enable one-click action item scheduling"
+        >
+          🔗 Connect Google Calendar
+        </a>
+      </div>
     </div>
   );
 }
