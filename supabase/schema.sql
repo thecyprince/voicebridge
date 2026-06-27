@@ -30,3 +30,9 @@ create table if not exists google_tokens (
 );
 
 -- Service-role access only — no RLS needed for this table.
+
+-- Keep-alive heartbeat (one row, upserted by /api/ping cron every 3 days)
+create table if not exists heartbeat (
+  id         text primary key default 'default',
+  pinged_at  timestamptz not null default now()
+);
