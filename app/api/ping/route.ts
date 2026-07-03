@@ -13,10 +13,14 @@ export async function GET() {
     }).info(),
   ]);
 
-  return NextResponse.json({
-    ok: true,
-    ts: new Date().toISOString(),
-    supabase: supabaseResult.status,
-    vector: vectorResult.status,
-  });
+  const ok = supabaseResult.status === "fulfilled" && vectorResult.status === "fulfilled";
+  return NextResponse.json(
+    {
+      ok,
+      ts: new Date().toISOString(),
+      supabase: supabaseResult.status,
+      vector: vectorResult.status,
+    },
+    { status: ok ? 200 : 503 },
+  );
 }
