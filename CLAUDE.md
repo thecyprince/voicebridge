@@ -33,6 +33,11 @@ Lessons from the 2026-06-26/27 incident (2 days lost starting from the wrong end
 ## Known Gaps (2026-05-21)
 
 - `ClerkProvider` not yet added to `app/layout.tsx`
-- Google OAuth callback route not implemented — Calendar needs manual `GOOGLE_ACCESS_TOKEN`
 - `evals/data/` is empty — no testsets yet
 - No mobile layout
+
+## Google Calendar OAuth (2026-07-03)
+
+- Full OAuth flow is implemented: `/api/calendar/connect` → consent → `/api/calendar/callback` stores the **refresh token** in the `google_tokens` Supabase table (id `default`). `GOOGLE_ACCESS_TOKEN` is now only a legacy fallback — no longer required.
+- Redirect URI is **derived from the request origin** (`lib/google-oauth.ts`), not `GOOGLE_REDIRECT_URI`. This is intentional: `sync-secrets.sh` copies Doppler-dev→Vercel-prod, so a static redirect env can't hold localhost and prod at once.
+- **Manual (console-only) step when the prod domain changes:** add `<origin>/api/calendar/callback` to the OAuth client's Authorized redirect URIs in Google Cloud Console. Currently registered must include `http://localhost:3000/api/calendar/callback` and `https://voicebridge-one.vercel.app/api/calendar/callback`. Symptom if missing: `redirect_uri_mismatch`.
