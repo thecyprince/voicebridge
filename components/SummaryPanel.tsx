@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ActionItem, Memo } from "@/types";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
@@ -85,6 +85,17 @@ function ActionItemRow({
 }
 
 export function SummaryPanel({ memo, onActionItemUpdated }: SummaryPanelProps) {
+  const [calendarConnected, setCalendarConnected] = useState<boolean | null>(
+    null,
+  );
+
+  useEffect(() => {
+    fetch("/api/calendar/status")
+      .then((r) => r.json())
+      .then((d) => setCalendarConnected(Boolean(d.connected)))
+      .catch(() => setCalendarConnected(null));
+  }, []);
+
   return (
     <div className="p-4 space-y-4 overflow-y-auto h-full dark:bg-gray-900">
       {/* Topics */}
@@ -129,16 +140,27 @@ export function SummaryPanel({ memo, onActionItemUpdated }: SummaryPanelProps) {
         </div>
       )}
 
-      {/* Calendar connect hint */}
-      <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
-        <a
-          href="/api/calendar/connect"
-          className="text-xs text-blue-400 hover:underline"
-          title="Connect Google Calendar to enable one-click action item scheduling"
-        >
-          🔗 Connect Google Calendar
-        </a>
-      </div>
+      {/* Calendar connect hint (hidden until status resolves) */}
+      {calendarConnected !== null && (
+        <div className="pt-2 border-t border-gray-100 dark:border-gray-700">
+          {calendarConnected ? (
+            <span
+              className="text-xs text-green-600 dark:text-green-400"
+              title="Google Calendar is connected — action items can be scheduled with one click"
+            >
+              ✓ Google Calendar connected
+            </span>
+          ) : (
+            <a
+              href="/api/calendar/connect"
+              className="text-xs text-blue-400 hover:underline"
+              title="Connect Google Calendar to enable one-click action item scheduling"
+            >
+              🔗 Connect Google Calendar
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }
