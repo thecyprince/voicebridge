@@ -13,12 +13,22 @@ export async function GET() {
     }).info(),
   ]);
 
-  const ok = supabaseResult.status === "fulfilled" && vectorResult.status === "fulfilled";
+  // A settled promise only means the request didn't throw — Supabase writes
+  // resolve normally even when rejected (e.g. table missing, RLS denial), so
+  // the inner `error` field must be checked too or failures go unreported.
+  const supabaseOk =
+    supabaseResult.status === "fulfilled" && !supabaseResult.value.error;
+  const ok = supabaseOk && vectorResult.status === "fulfilled";
+
   return NextResponse.json(
     {
       ok,
       ts: new Date().toISOString(),
-      supabase: supabaseResult.status,
+      supabase: supabaseOk
+        ? "fulfilled"
+        : supabaseResult.status === "fulfilled"
+          ? `error: ${supabaseResult.value.error!.message}`
+          : `rejected: ${supabaseResult.reason}`,
       vector: vectorResult.status,
     },
     { status: ok ? 200 : 503 },
