@@ -35,6 +35,7 @@ Lessons from the 2026-06-26/27 incident (2 days lost starting from the wrong end
 - `ClerkProvider` not yet added to `app/layout.tsx`
 - `evals/data/` is empty — no testsets yet
 - No mobile layout
+- Next.js `middleware` file convention is deprecated (deploy logs a warning) — migrate to the `proxy` convention: https://nextjs.org/docs/messages/middleware-to-proxy
 
 ## Google Calendar OAuth (2026-07-03)
 
