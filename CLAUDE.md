@@ -2,7 +2,7 @@
 
 Bilingual Korean+English AI voice memo app. Eric's portfolio project — demonstrates STT, RAG, LLM tool use, evals. Full details in `CLAUDE_REFERENCE.md`.
 
-**Start of session:** read `HANDOFF.md` for current state and next steps.
+**Start of session:** read `HANDOFF.md` for current state, known gaps, and next steps — that file is the single source of truth for status; do not track gaps here.
 
 ## Rules — Do Not Break
 
@@ -11,6 +11,7 @@ Bilingual Korean+English AI voice memo app. Eric's portfolio project — demonst
 - `answerFromMemos()` has **prompt caching** (`cache_control: ephemeral`) — keep it, cuts cost ~70%
 - Chunk IDs are `{memoId}_{index}` — `deleteByMemoId()` depends on this pattern
 - `types/index.ts` is the single source of truth for shared types
+- Env vars: Doppler is the source of truth; sync via `sync-secrets.sh`, never the Vercel dashboard (dashboard saves have silently left empty strings)
 
 ## Commands
 
@@ -29,13 +30,6 @@ Lessons from the 2026-06-26/27 incident (2 days lost starting from the wrong end
 3. **Empty env vars in Vercel** are the known failure mode (silent Doppler disconnect; dashboard saves can persist empty strings). `vercel env pull` redacts sensitive values, so "empty" is invisible locally — trust `/api/health`, not pulled files. Fix: `./scripts/sync-secrets.sh`, never the Vercel dashboard UI.
 4. **Same opaque 500 also comes from free-tier auto-pause** (Supabase + Upstash both pause after ~7 idle days). `/api/ping` JSON says which one (`rejected`). A paused service can mask a separate env-var problem — after unpausing, re-run the health check.
 5. **Prefer CLI over dashboard walkthroughs** — `vercel env`, `doppler secrets`, `supabase` CLI. Guiding the user through web UIs Claude can't see caused multi-turn loops; only fall back to the dashboard when no CLI equivalent exists.
-
-## Known Gaps (2026-05-21)
-
-- `ClerkProvider` not yet added to `app/layout.tsx`
-- `evals/data/` is empty — no testsets yet
-- No mobile layout
-- Next.js `middleware` file convention is deprecated (deploy logs a warning) — migrate to the `proxy` convention: https://nextjs.org/docs/messages/middleware-to-proxy
 
 ## Google Calendar OAuth (2026-07-03)
 
