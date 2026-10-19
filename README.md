@@ -2,11 +2,12 @@
 
 Bilingual Korean+English AI voice memo assistant. Record a memo in Korean, English, or both — get a transcript with per-segment language tags, an LLM summary, extracted action items you can add to Google Calendar, and a semantic search bar to ask questions across all your past memos.
 
-**Live demo:** (coming soon — deploy to Vercel)
+**Live demo:** https://voicebridge-one.vercel.app
 
 ## Features
 
-- **Bilingual STT** — OpenAI Whisper handles Korean, English, and code-switched audio natively
+- **Bilingual STT** — Gladia transcribes Korean, English, and code-switched audio (`ko`+`en` with code-switching enabled)
+- **Speaker diarization** — transcript segments are grouped by speaker, with inline speaker renaming
 - **Per-segment language tagging** — each transcript segment is tagged `[KO]` or `[EN]` with one-tap translation
 - **AI summary + action items** — Claude Sonnet extracts a summary and concrete TODOs via structured tool use
 - **Google Calendar integration** — one-click to add any action item as a calendar event
@@ -17,8 +18,8 @@ Bilingual Korean+English AI voice memo assistant. Record a memo in Korean, Engli
 
 | Layer | Choice |
 |-------|--------|
-| Frontend | Next.js 15 (App Router) + TypeScript + Tailwind + shadcn/ui |
-| STT | OpenAI Whisper API |
+| Frontend | Next.js 16 (App Router) + TypeScript + Tailwind + shadcn/ui |
+| STT | Gladia API (pre-recorded, diarization + code-switching) — migrated from OpenAI Whisper API, which has no diarization |
 | LLM | Claude Sonnet 4.6 (Anthropic SDK, prompt caching) |
 | Embeddings | OpenAI text-embedding-3-small |
 | Vector store | Upstash Vector |
@@ -45,7 +46,7 @@ cp .env.example .env.local
 # Fill in all values — see .env.example for instructions
 ```
 
-You'll need accounts for: OpenAI, Anthropic, Upstash, Supabase, Vercel, Clerk, and Google Cloud (Calendar API).
+You'll need accounts for: Gladia, OpenAI, Anthropic, Upstash, Supabase, Vercel, Clerk, and Google Cloud (Calendar API).
 
 ### 3. Create the Supabase table
 
@@ -64,6 +65,8 @@ npm run dev
 # Populate evals/data/ with audio files + ground truth first (see evals/*.ts for format)
 npm run evals
 ```
+
+> Note: `evals/wer.ts` still measures OpenAI `whisper-1`, not the production Gladia STT — the WER targets below are from the Whisper era.
 
 | Eval | Target |
 |------|--------|
