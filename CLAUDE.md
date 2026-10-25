@@ -2,7 +2,7 @@
 
 Bilingual Korean+English AI voice memo app. Eric's portfolio project — demonstrates STT, RAG, LLM tool use, evals. Full details in `CLAUDE_REFERENCE.md`.
 
-**Start of session:** read `HANDOFF.md` for current state, known gaps, and next steps — that file is the single source of truth for status; do not track gaps here.
+**Start of session:** session handoffs live in the second-brain vault, not in this repo: `~/projects/second-brain/handoffs/YYYY-MM-DD-voicebridge-*.md`. The second-brain session start names the newest one and its age; check its date against the code before trusting it. Do not track gaps here.
 
 ## Rules — Do Not Break
 
